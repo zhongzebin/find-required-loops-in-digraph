@@ -11,10 +11,10 @@ Understand the question:
 
 2. I need to find out all the loops fulfilling the following requirements. 
 
-  1) The length of the loop should be no less than 3 and no more than 7. 
+  a) The length of the loop should be no less than 3 and no more than 7. 
   
-  2) If A transfers x to B and B transfers y to C, 0.2<=y/x<=3.
+  b) If A transfers x to B and B transfers y to C, 0.2<=y/x<=3.
   
-  3) The amount of loops should be no more than 20,000,000.
+  c) The amount of loops should be no more than 20,000,000.
   
 3. The output file "result.txt" should first include 

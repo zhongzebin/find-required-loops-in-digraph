@@ -11,7 +11,7 @@ Understand the question:
 
 2. I need to find out all the loops fulfilling the following requirements. 
 
-  2.1) The length of the loop should be no less than 3 and no more than 7. 
+>>a) The length of the loop should be no less than 3 and no more than 7. 
   
   2.2) If A transfers x to B and B transfers y to C, 0.2<=y/x<=3.
   

@@ -75,6 +75,9 @@ Baseline:
 
 In baseline, one loop might be searched for many times, e.g. 1->2->3->1 and 2->3->1->2. So we can save time by not searching the same loop. Moreover, sorting (according to the dictionary sequence) can also cost lots of time.
 
-For the sorting problem, we can first sort map before DFS. After sorting, key is in the ascending order. Thus, we can ensure the first ID in the loop be the smallest one (no same loops will be found). Moreover, we can store the loops with different length in different vectors. Then, the answer can be generated in the dictionary sequence naturally.
+For the sorting problem, we can first sort map before DFS. After sorting, key is in the ascending order. Thus, we can ensure the first ID in the loop be the smallest one (no same loops will be found). Moreover, we can store the loops with different lengths in different vectors. Then, the answer can be generated in the dictionary sequence naturally.
 
-Think of the time cost, we add a sorting process with length of 2,000,000, but we eliminate a sorting process with length of 200,000,000 and delete all identical loops!
+Think of the time cost, we add a sorting process with a length of 2,000,000, but we eliminate a sorting process with a length of 200,000,000 and delete all identical loops!
+
+2nd Opt (replace map by array)
+----

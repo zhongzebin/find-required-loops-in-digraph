@@ -81,3 +81,7 @@ Think of the time cost, we add a sorting process with a length of 2,000,000, but
 
 2nd Opt (replace map by array)
 ----
+
+In baseline, we use map to indicate the digraph through the whole DFS process, calling an object in map costs more time compared with array. So can we replace map by array?
+
+The biggest problem is, the ID is a 32 unsigned int, we can't build an array with the size of 32-uint*32-uint.

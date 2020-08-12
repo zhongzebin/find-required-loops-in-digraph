@@ -49,11 +49,9 @@ Baseline:
 
 >>>>>if (len==1) 
 
->>>>>>pre_money=map[current][i].money
-
 >>>>>>marked[map[current][i].ID]=true
 
->>>>>>dfs(begin,map[current][i].ID,map,marked,len+1,map[current][i].money,pre_money)
+>>>>>>dfs(begin,map[current][i].ID,map,marked,len+1,map[current][i].money,map[current][i].money)
 
 >>>>>>marked[map[current][i].ID]=false
 

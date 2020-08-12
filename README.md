@@ -33,24 +33,28 @@ Baseline:
 
 3. using dfs (deep first searching) to search all the possible loops
 
->>void dfs (begin,current,map,marked,len)
+>>void dfs (begin,current,map,marked,len,money,pre_money)
 
 >>>for (int i=0;i<map[current].size();i++)
 
->>>>if (len>=3 && map[current][i]==begin)
+>>>>if (len>=3 && map[current][i].ID==begin && moneyRequirement(money,map[current][i].money) && moneyRequirement(map[current][i].money,pre_money))
 
 >>>>>storeLoop()
 
 >>>>>return
 
->>>>if (len<7 && !marked[map[current][i]])
+>>>>if (len<7 && !marked[map[current][i].ID])
 
->>>>>marked[map[current][i]]=true
+>>>>>if (len==1) pre_money=map[current][i].money
 
->>>>>dfs(begin,map[current][i],map,marked,len+1)
+>>>>>else if (moneyRequirement(money,map[current][i].money))
 
->>>>>marked[map[current][i]]=false
+>>>>>>marked[map[current][i].ID]=true
+
+>>>>>>dfs(begin,map[current][i].ID,map,marked,len+1,map[current][i].money,pre_money)
+
+>>>>>>marked[map[current][i].ID]=false
 
 >>for key in map
 
->>>dfs(key,key,map,marked[]=false,1)
+>>>dfs(key,key,map,marked[]=false,1,0,0)

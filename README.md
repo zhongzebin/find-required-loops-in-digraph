@@ -69,3 +69,8 @@ Baseline:
 >>>dfs(key,key,map,marked[]=false,1,0,0)
 
 4. sort the found loops and delete the identical ones
+
+1st Opt (eliminate the 4th step in Baseline)
+----
+
+In baseline, one loop might be searched for many times, e.g. 1->2->3->1 and 2->3->1->2. So we can save time by not searching the same loop. Moreover, sorting (according to the dictionary sequence) can also cost lots of time.

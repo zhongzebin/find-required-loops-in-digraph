@@ -18,3 +18,9 @@ Understand the question:
 >>c) The amount of loops should be no more than 20,000,000.
   
 3. The output file "result.txt" should first include the total number of the required loops (1st line). In the following lines, each line represents a loop and they are sorted according to the dictionary sequence.
+
+How to run this project?
+
+>g++ -O3 main.cpp -o test -lpthread -fpic
+
+>./test

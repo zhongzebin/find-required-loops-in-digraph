@@ -43,9 +43,19 @@ Baseline:
 
 >>>>>return
 
->>>>if (len<7 && !marked[map[current][i].ID])
+>>>>if (len==7) return
 
->>>>>if (len==1) pre_money=map[current][i].money
+>>>>if (!marked[map[current][i].ID])
+
+>>>>>if (len==1) 
+
+>>>>>>pre_money=map[current][i].money
+
+>>>>>>marked[map[current][i].ID]=true
+
+>>>>>>dfs(begin,map[current][i].ID,map,marked,len+1,map[current][i].money,pre_money)
+
+>>>>>>marked[map[current][i].ID]=false
 
 >>>>>else if (moneyRequirement(money,map[current][i].money))
 

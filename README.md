@@ -58,3 +58,5 @@ Baseline:
 >>for key in map
 
 >>>dfs(key,key,map,marked[]=false,1,0,0)
+
+4. sort the found loops and delete the identical ones

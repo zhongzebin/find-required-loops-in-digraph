@@ -21,6 +21,25 @@ Understand the question:
 
 How to run this project?
 
->g++ -O3 main.cpp -o test -lpthread -fpic
+>g++ -O3 512.cpp -o test -lpthread -fpic
 
 >./test
+
+Baseline:
+
+1. read the test.txt through ifstream and getline()
+
+2. using map to build a digraph
+
+3. using dfs (deep first searching) to search all the possible loops
+
+>>void dfs(begin,current,map,marked,len)
+
+>>>for(int i=0;i<map[current].size();i++)
+
+>>>>if(len>=3 && map[current][i]==begin)
+
+>>>>>storeLoop()
+
+>>>>>return
+

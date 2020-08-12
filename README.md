@@ -33,17 +33,17 @@ Baseline:
 
 3. using dfs (deep first searching) to search all the possible loops
 
->>void dfs(begin,current,map,marked,len)
+>>void dfs (begin,current,map,marked,len)
 
->>>for(int i=0;i<map[current].size();i++)
+>>>for (int i=0;i<map[current].size();i++)
 
->>>>if(len>=3 && map[current][i]==begin)
+>>>>if (len>=3 && map[current][i]==begin)
 
 >>>>>storeLoop()
 
 >>>>>return
 
->>>>if(len<7 && !marked[map[current][i]])
+>>>>if (len<7 && !marked[map[current][i]])
 
 >>>>>marked[map[current][i]]=true
 
@@ -51,3 +51,6 @@ Baseline:
 
 >>>>>marked[map[current][i]]=false
 
+>>for key in map
+
+>>>dfs(key,key,map,marked[]=false,1)

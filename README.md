@@ -26,6 +26,7 @@ How to run this project?
 >./test
 
 Baseline:
+----
 
 1. read the test.txt through ifstream and getline()
 

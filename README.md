@@ -43,3 +43,11 @@ Baseline:
 
 >>>>>return
 
+>>>>if(len<7 && !marked[map[current][i]])
+
+>>>>>marked[map[current][i]]=true
+
+>>>>>dfs(begin,map[current][i],map,marked,len+1)
+
+>>>>>marked[map[current][i]]=false
+

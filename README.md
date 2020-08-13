@@ -81,7 +81,7 @@ For the sorting problem, we can first sort map before DFS. After sorting, key is
 
 Think of the time cost, we add a sorting process with a length of 2,000,000, but we eliminate a sorting process with a length of 200,000,000 and delete all identical loops!
 
-2nd Opt (replace map by array)
+2nd Opt (replace map by vector)
 ----
 
 In baseline, we use map to indicate the digraph through the whole DFS process, calling an object in map costs more time compared with array. So can we replace map by array?
@@ -100,7 +100,7 @@ In the competition, the Kun Peng processor we use has 4 threads, so we can imple
 
 In baseline, in order to store the answer, we need to use vector<vector<int>>. However, push_back() is too slow, and emplace_back() is faster but not fast enough.
   
-We already know the answer's size is n*3+n*4+n*5+n*6+n*7. So we can seperate them. e.g. we have ans3, ans4, ans5, ans6 and ans7 instead of an intact ans.
+We already know the answer's size is n_3*3+n_4*4+n_5*5+n_6*6+n_7*7. So we can seperate them. e.g. We have ans3, ans4, ans5, ans6 and ans7 instead of an intact ans. Apparently, in each group of loops, the number of loops should be no more than 50,000,000. So we can create one-dimension arrays with size of 3*20,000,000, 4*20,000,000, 5*20,000,000, 6*20,000,000 and 7*20,000,000.
 
 5th Opt (replace ifstream and getline by mmap)
 -----

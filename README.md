@@ -89,3 +89,8 @@ In baseline, we use map to indicate the digraph through the whole DFS process, c
 The biggest problem is, the ID is a 32 unsigned int, but we can't build an array with the size of 32-uint*2,000,000.
 
 To solve this problem, we can map the ID into successive numbers (from 0). By trying, we know the amount of ID should be no more than 500,000. Unfortunately, by trying, we can know the times for each ID transfering out money vary a lot. So we still need to use vector<int> mapID[500000] and vector<unsigned_int> mapMoney[500000]. Moreover, when writing the "result.txt" file, we also need to remap the ID. In order to save time, when building the remap, we build it from successive numbers to strings (with comma). Then, we can save the time from converting ID to strings.
+
+3rd Opt (muti-thread)
+-----
+
+In the competition, the Kun Peng processor we use has 4 threads, so we can implement 4 threads in our code. For the 2nd process, we can divide the read data evenly into four groups and build four digraphs at the same time. For the DFS process, we can divide the for loop into four sections and process them through four threads. We can't divide them evenly, because, apparently, smaller IDs have more probability to generate more loops (the first ID in a loop is always the smallest). By trying, the division points are num/40, num/20 and num/10.

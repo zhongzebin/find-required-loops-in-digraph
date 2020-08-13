@@ -144,7 +144,7 @@ How to implement quick sort:
 
 10. sort[low]=pivot
 
-Special notice: in step 4-10, we can ensure that all the numbers before the index low are smaller than those after index low.
+>Special notice: in step 4-10, we can ensure that all the numbers before the index low are smaller than those after index low.
 
 11. let right=low-1, and go to the step 2
 

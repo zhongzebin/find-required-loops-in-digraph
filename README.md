@@ -114,3 +114,20 @@ In baseline, ifstream and getline costs lots of time because memory visits the d
 >char* p = (char*)mmap(NULL, len, PROT_READ, MAP_PRIVATE, fd, 0);
 
 Then I can visit the context by p[i].
+
+6th Opt (replace bubble sort by quick sort)
+----
+
+In C++, we usually sort(begin,end) funtion to sort vectors and arrays. But in this case, we need to sort like this "1->2 should be in front of 1->3". It's not an ordinary sort, so we can't use the given sort funtion.
+
+In baseline, we use bubble sort. But it is quite slow (O(n^2)) when dealing with big datas. So we can use the quick sort (O(nlogn)).
+
+How to implement quick sort:
+
+1. start with left=begin, right=end
+
+2. if left<right, continue with the 3rd step, else, end the function
+
+3. pivot=sort[left]
+
+4. 

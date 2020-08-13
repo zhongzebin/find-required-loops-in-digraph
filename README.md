@@ -128,6 +128,24 @@ How to implement quick sort:
 
 2. if left<right, continue with the 3rd step, else, end the function
 
-3. pivot=sort[left]
+3. pivot=sort[left], low=left, high=right
 
-4. 
+4. if low<high, continue with the 5th step, else, end the loop
+
+5. from high find the nearest high letting sort[high]<pivot
+
+6. sort[low]=sort[high]
+
+7. from low find the nearest low letting sort[low]>pivot
+
+8. sort[high]=sort[low]
+
+9. go back to step 4
+
+10. sort[low]=pivot
+
+Special notice: in step 4-10, we can ensure that all the numbers before the index low are smaller than those after index low.
+
+11. let right=low-1, and go to the step 2
+
+12. let left=low+1, and go to the step 2

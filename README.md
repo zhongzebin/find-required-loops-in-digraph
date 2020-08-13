@@ -94,3 +94,13 @@ To solve this problem, we can map the ID into successive numbers (from 0). By tr
 -----
 
 In the competition, the Kun Peng processor we use has 4 threads, so we can implement 4 threads in our code. For the 2nd process, we can divide the read data evenly into four groups and build four digraphs at the same time. For the DFS process, we can divide the for loop into four sections and process them through four threads. We can't divide them evenly, because, apparently, smaller IDs have more probability to generate more loops (the first ID in a loop is always the smallest). By trying, the division points are num/40, num/20 and num/10.
+
+4th Opt (replace vector by array)
+-----
+
+In baseline, in order to store the answer, we need to use vector<vector<int>>. However, push_back() is too slow, and emplace_back() is faster but not fast enough.
+  
+We already know the answer's size is n*3+n*4+n*5+n*6+n*7. So we can seperate them. e.g. we have ans3, ans4, ans5, ans6 and ans7 instead of an intact ans.
+
+5th Opt (replace ifstream and getline by mmap)
+-----

@@ -100,7 +100,7 @@ In the competition, the Kun Peng processor we use has 4 threads, so we can imple
 
 In baseline, in order to store the answer, we need to use vector<vector<int>>. However, push_back() is too slow, and emplace_back() is faster but not fast enough.
   
-We already know the answer's size is n3×3+n4×4+n5×5+n6×6+n7×7. So we can seperate them. e.g. We have ans3, ans4, ans5, ans6 and ans7 instead of an intact ans. Apparently, in each group of loops, the number of loops should be no more than 50,000,000. So we can create one-dimension arrays with size of 3*20,000,000, 4*20,000,000, 5*20,000,000, 6*20,000,000 and 7*20,000,000.
+We already know the answer's size is n3×3+n4×4+n5×5+n6×6+n7×7. So we can seperate them. e.g. We have ans3, ans4, ans5, ans6 and ans7 instead of an intact ans. Apparently, in each group of loops, the number of loops should be no more than 50,000,000. So we can create one-dimension arrays with size of 3×20,000,000, 4×20,000,000, 5×20,000,000, 6×20,000,000 and 7×20,000,000.
 
 5th Opt (replace ifstream and getline by mmap)
 -----

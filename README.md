@@ -104,3 +104,11 @@ We already know the answer's size is n3×3+n4×4+n5×5+n6×6+n7×7. So we can se
 
 5th Opt (replace ifstream and getline by mmap)
 -----
+
+In baseline, ifstream and getline costs lots of time because memory visits the disk through each getline. The "test_data.txt" is rather small compared with the "ans.txt". So can we read them into the memory at one time. The C provides a method called mmap to operate memory.
+
+int fd = open(testFile.c_str(), O_RDONLY);
+int len = lseek(fd, 0, SEEK_END);
+char* p = (char*)mmap(NULL, len, PROT_READ, MAP_PRIVATE, fd, 0);
+
+Then I can visit the context by p[i].

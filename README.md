@@ -70,6 +70,8 @@ Baseline:
 
 4. sort the found loops and delete the identical ones
 
+5. write the "result.txt" file
+
 1st Opt (eliminate the 4th step in Baseline)
 ----
 
@@ -84,4 +86,6 @@ Think of the time cost, we add a sorting process with a length of 2,000,000, but
 
 In baseline, we use map to indicate the digraph through the whole DFS process, calling an object in map costs more time compared with array. So can we replace map by array?
 
-The biggest problem is, the ID is a 32 unsigned int, we can't build an array with the size of 32-uint*32-uint.
+The biggest problem is, the ID is a 32 unsigned int, but we can't build an array with the size of 32-uint*2,000,000.
+
+To solve this problem, we can map the ID into successive numbers (from 0). By trying, we know the amount of ID should be no more than 500,000. Unfortunately, by trying, we can know the times for each ID transfering out money vary a lot. So we still need to use vector<int> mapID[500000] and vector<unsigned_int> mapMoney[500000]. Moreover, when writing the "result.txt" file, we also need to remap the ID. In order to save time, when building the remap, we build it from successive numbers to strings (with comma). Then, we can save the time from converting ID to strings.

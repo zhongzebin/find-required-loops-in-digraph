@@ -149,3 +149,10 @@ How to implement quick sort:
 11. let right=low-1, and go to the step 2
 
 12. let left=low+1, and go to the step 2
+
+7th Opt (don't search back to the beginning)
+-----
+
+When building the map, we should also build the reverse map. Then, we can know which IDs have transferred money to the beginning ID. We store them, and when the DFS visits these IDs, a loop can be formed. 
+
+Why this method can save time? e.g. The beginning ID may receive money from 10-20 IDs in average. But in the DFS function, the number of the last possible IDs could be 100-200 in average. When searching a deeper layer and finding out whether they can go back to the beginning ID, we may visit 1000-2000 IDs. But if we build a reverse map (it costs extra time), in every search, we can save a lot of time.

@@ -163,3 +163,5 @@ Why this method can save time? e.g. The beginning ID may receive money from 10 I
 The size of a tree can boom when it goes deeper. In the 7th Opt, we cut the 8-layer tree into 7-layer tree. But, can we get a shallower tree (less than 7 layers)?
 
 The answer is yes! We can build a 4-layer tree in positive order and a 4-layer tree in negative order. When proceeding the DFS, those nodes, which aren't in these two pre-build trees, should be cut.
+
+In this Opt, we use two 4-layer trees to replace the 7-layer tree + 2-layer tree. Attention, we also include an extra process to mix these two trees (costs extra time). But, compared with the boomed trees, this method saves lots of time and it is the most important Opt!

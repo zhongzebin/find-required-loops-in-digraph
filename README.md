@@ -156,3 +156,10 @@ How to implement quick sort:
 When building the map, we should also build the reverse map. Then, we can know which IDs have transferred money to the beginning ID. We store them, and when the DFS visits these IDs, a loop can be formed. 
 
 Why this method can save time? e.g. The beginning ID may receive money from 10 IDs in average. But in the DFS function, the number of the last possible IDs could be 10^6 in average. When searching a deeper layer and finding out whether they can go back to the beginning ID, we may visit 10^7 IDs. But if we build a reverse map (it costs extra time), in every search, we can save a lot of time (don't need to visit those 10^7 IDs).
+
+8th Opt (cut the DFS tree)
+----
+
+The size of a tree can boom when it goes deeper. In the 7th Opt, we cut the 8-layer tree into 7-layer tree. But, can we get a shallower tree (less than 7 layers)?
+
+The answer is yes! We can build a 4-layer tree in positive order and a 4-layer tree in negative order. When proceeding the DFS, those nodes, which aren't in these two pre-build trees, should be cut.
